@@ -7,8 +7,8 @@ public class MathPractice
 		public static void main(String[] args)
 			{
 				System.out.println("Hello!");
-				//askQuestionNum();
-				//generateQuestions();
+				askQuestionNum();
+				generateQuestions();
 				generateMoreQuestions();
 
 			}
@@ -58,6 +58,7 @@ public class MathPractice
 		{
 			askQuestionNum();
 			count=1;
+			right=0;
 			while (count<=num)
 				{
 					int parameterL=(int)(Math.random()*10)+1;
@@ -65,9 +66,26 @@ public class MathPractice
 					System.out.println("Write a statement initializing an int called randomNumber that generates numbers between " + parameterL + " and " + parameterH);
 					Scanner userInput=new Scanner(System.in);
 					String ans=userInput.nextLine();
-					String correct="int randomNumber=(int)(Math.random()*" + (parameterH-parameterL) + ")+" + parameterL + ";";
-					System.out.println(correct);
+					
+					int parameterHL=parameterH-parameterL;
+					if (parameterHL<0)
+						{
+							parameterHL=parameterHL*-1;
+						}
+					
+					String correct="int randomNumber=(int)(Math.random()*" + (parameterHL) + ")+" + parameterH + ";";
+					if (ans.equals(correct))
+						{
+							System.out.println("Correct!");
+							right++;
+						}
+					else
+						{
+							System.out.println("Nope. The correct answer was " + correct);
+						}
+					count++;
 				}
+			System.out.println("You got " + right + " out of " + num);
 		}
 
 	}
