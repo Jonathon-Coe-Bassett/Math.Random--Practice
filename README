@@ -1,0 +1,2 @@
+This program is designed to quiz the user on their understanding of the Math.random() method in Java. It asks 2 types of questions; write a line that generates a random number with the parameters set and tell the highest and lowest numbers a line can generate.
+This is an APCS assgnment
