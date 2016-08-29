@@ -6,13 +6,15 @@ public class MathPractice
 
 		public static void main(String[] args)
 			{
-				askQuestionNum();
-				generateQuestions();
+				System.out.println("Hello!");
+				//askQuestionNum();
+				//generateQuestions();
+				generateMoreQuestions();
 
 			}
 		public static void askQuestionNum()
 		{
-			System.out.println("Hello! How many Math.random questions would you like to answer?");
+			System.out.println("How many questions would you like to answer?");
 			Scanner userInput=new Scanner(System.in);
 			num=userInput.nextInt();
 			System.out.println("I'll ask you " + num + " questions");
@@ -52,5 +54,20 @@ public class MathPractice
 				double percent=(right/num);
 				System.out.println("You got " + right + " out of " + num + ".");
 			}
+		public static void generateMoreQuestions()
+		{
+			askQuestionNum();
+			count=1;
+			while (count<=num)
+				{
+					int parameterL=(int)(Math.random()*10)+1;
+					int parameterH=(int)(Math.random()*10)+1;
+					System.out.println("Write a statement initializing an int called randomNumber that generates numbers between " + parameterL + " and " + parameterH);
+					Scanner userInput=new Scanner(System.in);
+					String ans=userInput.nextLine();
+					String correct="int randomNumber=(int)(Math.random()*" + (parameterH-parameterL) + ")+" + parameterL + ";";
+					System.out.println(correct);
+				}
+		}
 
 	}
